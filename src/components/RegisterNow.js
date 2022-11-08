@@ -1,6 +1,19 @@
-import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/UserContext';
 
 const RegisterNow = () => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleRegister = () => {
+    if (user) {
+      toast.success('You are already logged in');
+      navigate('/destinations');
+    } else {
+      navigate('/register');
+    }
+  };
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
@@ -11,9 +24,9 @@ const RegisterNow = () => {
 
           <div className="mt-6 sm:-mx-2">
             <div className="inline-flex w-full sm:w-auto sm:mx-2">
-              <NavLink to="/register" className="btn">
+              <button onClick={handleRegister} className="btn">
                 Register Now
-              </NavLink>
+              </button>
             </div>
           </div>
         </div>

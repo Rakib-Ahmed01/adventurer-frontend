@@ -35,6 +35,6 @@ code {
   font-family: 'Kalam', cursive;
 }
 
-/* p {
+::placeholder {
   font-family: 'Karla';
-} */
+}

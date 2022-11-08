@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { FiLogOut } from 'react-icons/fi';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import { AuthContext } from '../Contexts/UserContext';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useContext(AuthContext);
 
   return (
     <div className="header">
@@ -93,6 +96,49 @@ const Header = () => {
                 >
                   Blog
                 </NavLink>
+                {!user ? (
+                  <>
+                    {' '}
+                    <NavLink
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      to="/login"
+                    >
+                      Login
+                    </NavLink>
+                    <NavLink
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      to="/register"
+                    >
+                      Register
+                    </NavLink>
+                  </>
+                ) : (
+                  <>
+                    <NavLink
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      to="/my-reviews"
+                    >
+                      My Reviews
+                    </NavLink>
+                    <NavLink
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      to="/add-service"
+                    >
+                      Add Service
+                    </NavLink>
+                    <img
+                      src={user.photoURL}
+                      alt={user.displayName}
+                      title={user.displayName}
+                      className="my-2 md:mx-3 block w-8 h-8 rounded-full"
+                    />
+                    <FiLogOut
+                      className="my-2 md:mx-3"
+                      title="logout"
+                      onClick={logout}
+                    />
+                  </>
+                )}
               </div>
             </div>
           </div>
