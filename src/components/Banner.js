@@ -24,8 +24,8 @@ const Banner = () => {
                 Courses in 1+ Languages. Expert Instructors. Over 24+ Courses.
               </p>
 
-              <Link to="/register" className="btn mt-6 inline-block">
-                Register Now
+              <Link to="/destinations" className="btn mt-6 inline-block">
+                Start Exploring
               </Link>
             </div>
           </div>
