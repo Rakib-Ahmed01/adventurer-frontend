@@ -8,11 +8,17 @@
   .header .active {
     @apply font-semibold text-blue-500 border-b-2   border-blue-500;
   }
+  .btn {
+    @apply tracking-wider px-6 py-2 font-medium text-sm text-white uppercase transition-colors duration-300 transform bg-blue-500 rounded-md lg:w-auto hover:bg-blue-600 focus:outline-none border border-blue-500 text-center;
+  }
+  .outline-btn {
+    @apply tracking-wider px-6 py-2 font-medium  text-sm text-blue-500 uppercase transition-colors duration-300 transform bg-white rounded-md lg:w-auto hover:bg-white focus:outline-none border border-blue-500 text-center;
+  }
 }
 
 body {
   margin: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Kalam', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,4 +30,8 @@ code {
 
 .website-name {
   font-family: 'Kalam', cursive;
+}
+
+p {
+  font-family: 'Karla';
 }
