@@ -14,7 +14,7 @@
   .outline-btn {
     @apply tracking-wider px-6 py-2 font-medium  text-sm text-blue-500 uppercase transition-colors duration-300 transform bg-white rounded-md lg:w-auto  focus:outline-none border-2 hover:bg-blue-500 hover:text-white border-blue-500 text-center;
   }
-  .destination img {
+  .destination-img {
     @apply h-[260px] object-cover rounded-t;
   }
 }

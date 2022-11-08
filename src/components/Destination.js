@@ -2,12 +2,11 @@ import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 export default function Destination({ destination }) {
-  console.log(destination);
   const { title, desc, image, days, price, rating, _id } = destination;
   return (
-    <div className="destination flex flex-col border rounded">
+    <div className="flex flex-col border rounded">
       <div className="relative">
-        <img src={image} alt={title} className="w-full" />
+        <img src={image} alt={title} className="w-full destination-img" />
         <p className="absolute flex justify-center items-center top-2 left-2 bg-white px-4 py-1 rounded text-blue-500">
           {days}
         </p>
@@ -23,12 +22,8 @@ export default function Destination({ destination }) {
           <span>
             <AiFillStar className="text-blue-500" />
           </span>
-          {`${rating}(5)`}
+          {`${rating}(0)`}
         </h4>
-        {/* <h5 className="text-[17px] font-bold flex mt-1">
-          {price}{' '}
-          <TbCurrencyTaka className="w-5 h-5 -ml-[4px] transform rotate-[15deg]" />
-        </h5> */}
         <Link to={`/destinations/${_id}`}>
           {' '}
           <button className="outline-btn block mx-auto mt-2 w-full">

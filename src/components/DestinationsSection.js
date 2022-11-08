@@ -9,7 +9,6 @@ export default function DestinationsSection() {
     fetch('http://localhost:5000/destinations-for-home')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setDestinations(data);
       })
       .catch((err) => console.log(err));
@@ -37,7 +36,6 @@ export default function DestinationsSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr courses gap-5 mt-6 xl:mt-12 xl:gap-8">
             {destinations.map((destination) => {
-              console.log(destination.title);
               return (
                 <Destination key={destination._id} destination={destination} />
               );
