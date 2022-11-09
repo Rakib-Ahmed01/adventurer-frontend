@@ -1,4 +1,5 @@
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 export default function AllReviews({ review, setReviews }) {
   const { userName, reviewText, userPic, time, serviceImg, serviceName, _id } =
@@ -43,9 +44,9 @@ export default function AllReviews({ review, setReviews }) {
         <button className="delete-btn" onClick={handleDelete}>
           Delete
         </button>
-        <button className="update-btn" onClick={handleUpdate}>
-          Update
-        </button>
+        <Link to={`/update-review/${_id}`} className="update-btn">
+          <button onClick={handleUpdate}>Update</button>
+        </Link>
       </div>
       <div className="px-2 py-1 space-y-2 -mt-2">
         <div className="flex gap-4 items-center">

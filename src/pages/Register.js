@@ -161,7 +161,7 @@ export default function Register() {
               </Link>
             </small>
             <button type="submit" className="btn block w-full mt-4">
-              Sign Up
+              Register
             </button>
           </form>
         </div>

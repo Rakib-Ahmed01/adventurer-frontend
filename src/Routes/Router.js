@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layouts/Main';
-import AddService from '../pages/AddService';
+import AddDestination from '../pages/AddDestination';
 import Blog from '../pages/Blog';
 import Destination from '../pages/Destination';
 import Destinations from '../pages/Destinations';
@@ -8,6 +8,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import MyReviews from '../pages/MyReviews';
 import Register from '../pages/Register';
+import UpdateReview from '../pages/UpdateReview';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
@@ -51,12 +52,22 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/add-service',
+        path: '/add-destination',
         element: (
           <PrivateRoute>
-            <AddService />
+            <AddDestination />
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/update-review/:id',
+        element: (
+          <PrivateRoute>
+            <UpdateReview />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/update-review/${params.id}`),
       },
       {
         path: '/login',

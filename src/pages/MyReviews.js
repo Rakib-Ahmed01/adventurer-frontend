@@ -31,7 +31,7 @@ export default function MyReviews() {
           </div>
 
           {reviews.length ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr courses gap-5 mt-4 xl:mt-12 xl:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5 mt-4 xl:mt-12 xl:gap-8">
               {reviews.map((review) => {
                 return (
                   <AllReviews
