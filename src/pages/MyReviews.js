@@ -10,11 +10,10 @@ export default function MyReviews() {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setReviews(data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [user]);
 
   return (
     <div>

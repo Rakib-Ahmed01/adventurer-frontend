@@ -4,6 +4,7 @@ import AddDestination from '../pages/AddDestination';
 import Blog from '../pages/Blog';
 import Destination from '../pages/Destination';
 import Destinations from '../pages/Destinations';
+import Error from '../pages/Error';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import MyReviews from '../pages/MyReviews';
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Main />,
+    errorElement: <Error />,
     children: [
       {
         path: '/home',
