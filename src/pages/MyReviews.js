@@ -30,11 +30,23 @@ export default function MyReviews() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr courses gap-5 mt-6 xl:mt-12 xl:gap-8">
-            {reviews.map((review) => {
-              return <AllReviews key={review._id} review={review} />;
-            })}
-          </div>
+          {reviews.length ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr courses gap-5 mt-4 xl:mt-12 xl:gap-8">
+              {reviews.map((review) => {
+                return (
+                  <AllReviews
+                    key={review._id}
+                    review={review}
+                    setReviews={setReviews}
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            <div className="mx-auto mt-4 text-center w-[90%] max-w-2xl mb-2 border rounded p-8">
+              <h2>No Reviews Is Added!</h2>
+            </div>
+          )}
         </div>
       </div>
     </div>
