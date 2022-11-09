@@ -1,10 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layouts/Main';
+import AddService from '../pages/AddService';
 import Blog from '../pages/Blog';
 import Destination from '../pages/Destination';
 import Destinations from '../pages/Destinations';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import MyReviews from '../pages/MyReviews';
 import Register from '../pages/Register';
 
 const router = createBrowserRouter([
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
           const reviews = await reviewsRes.json();
           return { destination, reviews };
         },
+      },
+      {
+        path: '/my-reviews',
+        element: <MyReviews />,
+      },
+      {
+        path: '/add-service',
+        element: <AddService />,
       },
       {
         path: '/login',
