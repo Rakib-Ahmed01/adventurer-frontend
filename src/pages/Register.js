@@ -22,6 +22,7 @@ export default function Register() {
     signInWithProvider,
     updateUserProfile,
     createUserWithMailAndPass,
+    setLoading,
   } = useContext(AuthContext);
 
   const { email, password, name, url } = data;
@@ -42,6 +43,7 @@ export default function Register() {
         navigate('/login');
       })
       .catch((err) => {
+        setLoading(false);
         toast.error(err.message.replace('Firebase: ', ''));
       });
   };
@@ -54,6 +56,7 @@ export default function Register() {
         navigate('/destinations');
       })
       .catch((err) => {
+        setLoading(false);
         toast.error(err.message.replace('Firebase: ', ''));
       });
   };
@@ -66,6 +69,7 @@ export default function Register() {
         navigate('/destinations');
       })
       .catch((err) => {
+        setLoading(false);
         toast.error(err.message.replace('Firebase: ', ''));
       });
   };

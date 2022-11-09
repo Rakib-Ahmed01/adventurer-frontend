@@ -27,8 +27,17 @@ const router = createBrowserRouter([
       {
         path: '/destinations/:id',
         element: <Destination />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/destinations/${params.id}`),
+        loader: async ({ params }) => {
+          const destinationRes = await fetch(
+            `http://localhost:5000/destinations/${params.id}`
+          );
+          const reviewsRes = await fetch(
+            `http://localhost:5000/reviews/${params.id}`
+          );
+          const [destination] = await destinationRes.json();
+          const reviews = await reviewsRes.json();
+          return { destination, reviews };
+        },
       },
       {
         path: '/login',

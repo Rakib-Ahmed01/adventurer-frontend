@@ -2,7 +2,8 @@ import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 export default function Destination({ destination }) {
-  const { title, desc, image, days, price, rating, _id } = destination;
+  const { title, desc, image, days, price, reviewCount, rating, _id } =
+    destination;
   return (
     <div className="flex flex-col border rounded">
       <div className="relative">
@@ -17,12 +18,12 @@ export default function Destination({ destination }) {
       </div>
       <div className="p-2 relative">
         <h3 className="text-blue-400 font-medium text-xl">{title}</h3>
-        <h2 className="mt-1 mb-2">{desc.substr(0, 120)}...</h2>
+        <h2 className="mt-1 mb-2">{desc.substr(0, 105)}...</h2>
         <h4 className="flex items-center gap-[2px]">
           <span>
             <AiFillStar className="text-blue-500" />
           </span>
-          {`${rating}(0)`}
+          {`${rating}(${reviewCount})`}
         </h4>
         <Link to={`/destinations/${_id}`}>
           {' '}

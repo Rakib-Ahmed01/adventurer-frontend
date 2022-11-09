@@ -18,7 +18,8 @@ export default function Login() {
 
   const path = location?.state?.from || '/destinations';
 
-  const { signInWithProvider, signInWithMailAndPass } = useContext(AuthContext);
+  const { signInWithProvider, signInWithMailAndPass, setLoading } =
+    useContext(AuthContext);
 
   const { email, password } = data;
 
@@ -30,8 +31,6 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(data);
-
     signInWithMailAndPass(email, password)
       .then((res) => {
         toast.success('Logged In Successfully');
@@ -39,6 +38,7 @@ export default function Login() {
       })
       .catch((err) => {
         toast.error(err.message.replace('Firebase: ', ''));
+        setLoading(false);
       });
   };
 
@@ -50,6 +50,7 @@ export default function Login() {
         navigate(path, { replace: true });
       })
       .catch((err) => {
+        setLoading(false);
         toast.error(err.message.replace('Firebase: ', ''));
       });
   };
@@ -62,6 +63,7 @@ export default function Login() {
         navigate(path, { replace: true });
       })
       .catch((err) => {
+        setLoading(false);
         toast.error(err.message.replace('Firebase: ', ''));
       });
   };
