@@ -72,7 +72,7 @@ export default function Destination() {
             </p>
           </div>
           <div className="p-2 relative">
-            <h3 className="text-blue-400 font-medium text-xl">{title}</h3>
+            <h3 className="text-blue-500 font-medium text-xl">{title}</h3>
             <h2 className="mt-1 mb-2">{desc}</h2>
             <h4 className="flex items-center gap-[2px]">
               <span>
