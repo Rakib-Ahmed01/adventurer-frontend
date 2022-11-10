@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AiFillStar } from 'react-icons/ai';
+import { PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import Review from '../components/Review';
 import { AuthContext } from '../Contexts/UserContext';
@@ -56,7 +57,9 @@ export default function Destination() {
     <div className=" flex-col rounded flex items-center justify-between mx-auto max-w-2xl mb-2 gap-5 px-6 py-8">
       <div className="border rounded">
         <div className="relative w-full">
-          <img src={image} alt={title} className="w-full destination-img" />
+          <PhotoView src={image}>
+            <img src={image} alt={title} className="w-full destination-img" />
+          </PhotoView>
           <p className="absolute flex justify-center items-center top-2 left-2 bg-white px-4 py-1 rounded text-blue-500">
             {days}
           </p>
@@ -83,7 +86,7 @@ export default function Destination() {
           <form onSubmit={handleSubmit}>
             <textarea
               name="review"
-              className="w-full border rounded resize-none h-36 placeholder:p-2"
+              className="w-full border rounded resize-none h-36 placeholder:p-2 p-1"
               placeholder="Your Review..."
               onBlur={(e) => setReview(e.target.value)}
             ></textarea>

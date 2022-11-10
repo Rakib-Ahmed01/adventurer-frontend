@@ -1,8 +1,15 @@
-import { useState } from 'react';
-import reviews from '../assets/data/student-reviews';
+import { useEffect, useState } from 'react';
 
 const Testimonial = () => {
+  const [reviews, setReviews] = useState([]);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/all-reviews')
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   const increaseIndex = () => {
     const newIndex = checkNumber(index + 1);
@@ -22,7 +29,18 @@ const Testimonial = () => {
     }
   };
 
-  const { name, comment, job, image } = reviews[index];
+  if (reviews[index]?.reviewText.length < 50) {
+    increaseIndex();
+  }
+
+  setTimeout(() => {
+    const newIndex = checkNumber(index + 1);
+    setIndex(newIndex);
+  }, 5000);
+
+  console.log(reviews[index]?.time);
+
+  // const { userName, reviewText, time, userpic } = reviews[index];
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
@@ -58,22 +76,26 @@ const Testimonial = () => {
 
             <div>
               <p className="flex items-center text-[17px] text-center text-gray-500 lg:mx-8">
-                {comment}
+                {reviews[index]?.reviewText}
               </p>
 
               <div className="flex flex-col items-center justify-center mt-8">
                 <img
                   className="object-cover rounded-full w-14 h-14"
-                  src={image}
+                  src={reviews[index]?.userpic}
                   alt=""
                 />
 
                 <div className="mt-4 text-center">
                   <h1 className="font-semibold text-gray-800 dark:text-white">
-                    {name}
+                    {reviews[index]?.userName}
                   </h1>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
-                    {job}
+                    {`${new Date(
+                      reviews[index]?.time
+                    ).toDateString()}  ${new Date(
+                      reviews[index]?.time
+                    ).toLocaleTimeString()}`}
                   </span>
                 </div>
               </div>

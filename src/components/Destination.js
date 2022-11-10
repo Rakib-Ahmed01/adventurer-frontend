@@ -1,4 +1,5 @@
 import { AiFillStar } from 'react-icons/ai';
+import { PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 export default function Destination({ destination }) {
@@ -7,7 +8,9 @@ export default function Destination({ destination }) {
   return (
     <div className="flex flex-col border rounded">
       <div className="relative">
-        <img src={image} alt={title} className="w-full destination-img" />
+        <PhotoView src={image}>
+          <img src={image} alt={title} className="w-full destination-img" />
+        </PhotoView>
         <p className="absolute flex justify-center items-center top-2 left-2 bg-white px-4 py-1 rounded text-blue-500">
           {days}
         </p>

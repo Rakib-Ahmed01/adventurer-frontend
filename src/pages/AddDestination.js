@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddDestination() {
   const [destinationDetails, setDestinationDetails] = useState({
@@ -8,6 +10,9 @@ export default function AddDestination() {
     days: '',
   });
   const [desc, setDesc] = useState('');
+  const navigate = useNavigate();
+
+  const { name, image, expense, days } = destinationDetails;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,11 +22,31 @@ export default function AddDestination() {
   const hanldeSubmit = (e) => {
     e.preventDefault();
     console.log({ ...destinationDetails, desc });
-  };
+    const destination = {
+      title: name,
+      desc,
+      image,
+      rating: 4.7,
+      price: expense,
+      days: `${days} Days`,
+      reviewCount: 0,
+    };
 
-  // const handleTextArea = e => {
-  //   const {}
-  // }
+    fetch('http://localhost:5000/destinations', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(destination),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success('Destination added');
+          navigate('/all-destinations');
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -108,7 +133,7 @@ export default function AddDestination() {
             <textarea
               name="desc"
               id="desc"
-              className="w-full border rounded resize-none h-36 placeholder:p-1"
+              className="w-full border rounded resize-none h-36 placeholder:p-1 p-2"
               placeholder="Destination description..."
               onChange={(e) => setDesc(e.target.value)}
               minLength="150"

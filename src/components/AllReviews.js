@@ -2,8 +2,16 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 export default function AllReviews({ review, setReviews }) {
-  const { userName, reviewText, userPic, time, serviceImg, serviceName, _id } =
-    review;
+  const {
+    userName,
+    reviewText,
+    userPic,
+    time,
+    serviceImg,
+    serviceName,
+    _id,
+    serviceId,
+  } = review;
 
   const handleUpdate = () => {};
 
@@ -11,7 +19,7 @@ export default function AllReviews({ review, setReviews }) {
     const wantToDelete = window.confirm('Do you want to delete the review?');
 
     if (wantToDelete) {
-      fetch(`http://localhost:5000/reviews/${_id}`, {
+      fetch(`http://localhost:5000/reviews/${_id}?serviceId=${serviceId}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())

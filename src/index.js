@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { PhotoProvider } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import App from './App';
 import UserContext from './Contexts/UserContext';
 import './index.css';
@@ -9,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserContext>
-      <App />
+      <PhotoProvider>
+        <App />
+      </PhotoProvider>
     </UserContext>
   </React.StrictMode>
 );
