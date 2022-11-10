@@ -19,9 +19,9 @@ const Footer = () => {
             </div>
 
             <p className="max-w-md mx-auto mt-2 text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-              iure dolor incidunt quis sapiente sequi nostrum eos exercitationem
-              aspernatur expedita!
+              Find the right destination for you. Choose from many exiting
+              places. Engage with tourists from diffrent places. Start exploring
+              today. Over 10+ exiting destinations...
             </p>
           </div>
 

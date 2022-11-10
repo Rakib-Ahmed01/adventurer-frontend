@@ -35,17 +35,11 @@ export default function DestinationsSection() {
             </h1>
 
             <div className="mx-auto">
-              <span className="inline-block w-48 h-1 bg-blue-500 rounded-full"></span>
+              <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
             </div>
           </div>
 
-          <p className="max-w-2xl mx-auto mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas
-            magni libero consequuntur voluptatum velit amet id repudiandae ea,
-            deleniti laborum in neque eveniet.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr courses gap-5 mt-6 xl:mt-12 xl:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr courses gap-5 mt-6 xl:mt-8 xl:gap-8">
             {destinations.map((destination) => {
               return (
                 <Destination key={destination._id} destination={destination} />

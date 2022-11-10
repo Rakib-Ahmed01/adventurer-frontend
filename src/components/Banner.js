@@ -18,10 +18,9 @@ const Banner = () => {
               </h1>
 
               <p className="mt-2 text-gray-600 dark:text-gray-400">
-                Find the right instructor for you. Choose from many topics,
-                skill levels, and languages. Shop thousands of high-quality
-                on-demand online courses. Start learning today. Lifetime Access.
-                Courses in 1+ Languages. Expert Instructors. Over 24+ Courses.
+                Find the right destination for you. Choose from many exiting
+                places. Engage with tourists from diffrent places. Start
+                exploring today. Over 10+ exiting destinations...
               </p>
 
               <Link to="/destinations" className="btn mt-6 inline-block">
