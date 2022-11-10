@@ -1,5 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { useContext, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
@@ -76,6 +77,9 @@ export default function Register() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen  w-full">
+      <Helmet>
+        <title>Adventurer - Register</title>
+      </Helmet>
       <div className="flex flex-col items-center mb-2">
         <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white -mb-1">
           Register

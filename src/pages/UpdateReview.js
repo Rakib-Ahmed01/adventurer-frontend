@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
@@ -27,6 +28,9 @@ export default function UpdateReview() {
 
   return (
     <div className="bg-white dark:bg-gray-900">
+      <Helmet>
+        <title>Adventurer - Update Review</title>
+      </Helmet>
       <div className="container px-6 py-8 mx-auto">
         <div className="flex flex-col items-center">
           <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">

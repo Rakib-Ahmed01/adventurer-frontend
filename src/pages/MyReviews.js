@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import AllReviews from '../components/AllReviews';
 import { AuthContext } from '../Contexts/UserContext';
 
@@ -17,11 +18,14 @@ export default function MyReviews() {
 
   return (
     <div>
+      <Helmet>
+        <title>Adventurer - My Reviews</title>
+      </Helmet>
       <div className="bg-white dark:bg-gray-900">
         <div className="container px-6 py-8 mx-auto">
           <div className="flex flex-col items-center">
             <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-              Your Reviews
+              My Reviews
             </h1>
 
             <div className="mx-auto">
