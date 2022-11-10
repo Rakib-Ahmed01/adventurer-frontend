@@ -18,7 +18,7 @@ export default function UpdateReview() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/reviews/${review._id}`, {
+    fetch(`https://adventurer.vercel.app/reviews/${review._id}`, {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ text }),

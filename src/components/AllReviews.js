@@ -19,9 +19,12 @@ export default function AllReviews({ review, setReviews }) {
     const wantToDelete = window.confirm('Do you want to delete the review?');
 
     if (wantToDelete) {
-      fetch(`http://localhost:5000/reviews/${_id}?serviceId=${serviceId}`, {
-        method: 'DELETE',
-      })
+      fetch(
+        `https://adventurer.vercel.app/reviews/${_id}?serviceId=${serviceId}`,
+        {
+          method: 'DELETE',
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

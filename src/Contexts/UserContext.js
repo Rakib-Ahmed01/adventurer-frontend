@@ -26,9 +26,7 @@ export default function UserContext({ children }) {
           setLoading(false);
         }, 250);
       } else {
-        setTimeout(() => {
-          setLoading(false);
-        }, 250);
+        setLoading(false);
       }
     });
 

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
+import { HashLoader } from 'react-spinners';
 import AllReviews from '../components/AllReviews';
 import { AuthContext } from '../Contexts/UserContext';
 
@@ -8,9 +9,10 @@ export default function MyReviews() {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const { logout } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-reviews?email=${user?.email}`, {
+    fetch(`https://adventurer.vercel.app/my-reviews?email=${user?.email}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('access-token')}`,
       },
@@ -18,6 +20,7 @@ export default function MyReviews() {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
+          setIsLoading(false);
           return setReviews(data.reviews);
         } else {
           toast.error('Unauthorized Access!');
@@ -25,7 +28,15 @@ export default function MyReviews() {
         }
       })
       .catch((err) => console.log(err));
-  }, [user]);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-[100vh] flex justify-center items-center">
+        <HashLoader color="#4b7ccd" />
+      </div>
+    );
+  }
 
   return (
     <div>

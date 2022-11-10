@@ -1,5 +1,5 @@
 function postToLogin(email, name) {
-  fetch('http://localhost:5000/login', {
+  fetch('https://adventurer.vercel.app/login', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ email, name }),

@@ -33,7 +33,7 @@ export default function Destination() {
       time: new Date(),
     };
 
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://adventurer.vercel.app/reviews/${_id}`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(userReview),

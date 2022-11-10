@@ -35,10 +35,10 @@ const router = createBrowserRouter([
         element: <Destination />,
         loader: async ({ params }) => {
           const destinationRes = await fetch(
-            `http://localhost:5000/destinations/${params.id}`
+            `https://adventurer.vercel.app/destinations/${params.id}`
           );
           const reviewsRes = await fetch(
-            `http://localhost:5000/reviews/${params.id}`
+            `https://adventurer.vercel.app/reviews/${params.id}`
           );
           const [destination] = await destinationRes.json();
           const reviews = await reviewsRes.json();
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update-review/${params.id}`),
+          fetch(`https://adventurer.vercel.app/update-review/${params.id}`),
       },
       {
         path: '/login',

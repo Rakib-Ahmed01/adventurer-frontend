@@ -1,18 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { HashLoader } from 'react-spinners';
 import Destination from '../components/Destination';
 
 export default function Destinations() {
   const [destinations, setDestinations] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/destinations')
+    fetch('https://adventurer.vercel.app/destinations')
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
+        setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-[100vh] flex justify-center items-center">
+        <HashLoader color="#4b7ccd" />
+      </div>
+    );
+  }
 
   return (
     <>

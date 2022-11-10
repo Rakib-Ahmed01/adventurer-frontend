@@ -33,7 +33,7 @@ export default function AddDestination() {
       reviewCount: 0,
     };
 
-    fetch('http://localhost:5000/destinations', {
+    fetch('https://adventurer.vercel.app/destinations', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(destination),
@@ -43,7 +43,7 @@ export default function AddDestination() {
         console.log(data);
         if (data.acknowledged) {
           toast.success('Destination added');
-          navigate('/all-destinations');
+          navigate('/destinations');
         }
       })
       .catch((err) => console.log(err));

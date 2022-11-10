@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
+import { HashLoader } from 'react-spinners';
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
   const [index, setIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/all-reviews')
+    fetch('https://adventurer.vercel.app/all-reviews')
       .then((res) => res.json())
-      .then((data) => setReviews(data))
+      .then((data) => {
+        setReviews(data);
+        setIsLoading(false);
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -33,10 +38,18 @@ const Testimonial = () => {
     increaseIndex();
   }
 
-  // setTimeout(() => {
-  //   const newIndex = checkNumber(index + 1);
-  //   setIndex(newIndex);
-  // }, 5000);
+  setTimeout(() => {
+    const newIndex = checkNumber(index + 1);
+    setIndex(newIndex);
+  }, 5000);
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-[100vh] flex justify-center items-center">
+        <HashLoader color="#4b7ccd" />
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -79,7 +92,7 @@ const Testimonial = () => {
               <div className="flex flex-col items-center justify-center mt-8">
                 <img
                   className="object-cover rounded-full w-14 h-14"
-                  src={reviews[index]?.userpic}
+                  src={reviews[index]?.userPic}
                   alt=""
                 />
 
