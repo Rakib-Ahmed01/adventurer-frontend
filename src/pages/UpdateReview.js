@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/UserContext';
 
 export default function UpdateReview() {
   const review = useLoaderData();
   const [text, setText] = useState('');
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
+
+  if (!localStorage.getItem('access-token')) {
+    toast.error('Unauthorized Access!');
+    return logout();
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +55,7 @@ export default function UpdateReview() {
       >
         <textarea
           name="review"
-          className="w-full border rounded resize-none h-36 placeholder:p-2"
+          className="w-full border rounded resize-none h-36 placeholder:p-2 p-2"
           placeholder="Your Review..."
           onBlur={(e) => setText(e.target.value)}
           defaultValue={review.reviewText}

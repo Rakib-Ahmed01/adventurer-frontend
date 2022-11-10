@@ -7,6 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UserContext';
+import postToLogin from '../utils/postToLogin';
 
 export default function Login() {
   const [data, setData] = useState({
@@ -34,8 +35,10 @@ export default function Login() {
 
     signInWithMailAndPass(email, password)
       .then((res) => {
+        const user = res.user;
         toast.success('Logged In Successfully');
         navigate(path, { replace: true });
+        postToLogin(user.email, user.displayName);
       })
       .catch((err) => {
         toast.error(err.message.replace('Firebase: ', ''));
@@ -47,8 +50,10 @@ export default function Login() {
     const googleProvider = new GoogleAuthProvider();
     signInWithProvider(googleProvider)
       .then((res) => {
+        const user = res.user;
         toast.success('Logged In Successfully');
         navigate(path, { replace: true });
+        postToLogin(user.email, user.displayName);
       })
       .catch((err) => {
         setLoading(false);
@@ -60,8 +65,10 @@ export default function Login() {
     const githubProvider = new GithubAuthProvider();
     signInWithProvider(githubProvider)
       .then((res) => {
+        const user = res.user;
         toast.success('Logged In Successfully');
         navigate(path, { replace: true });
+        postToLogin(user.email, user.displayName);
       })
       .catch((err) => {
         setLoading(false);

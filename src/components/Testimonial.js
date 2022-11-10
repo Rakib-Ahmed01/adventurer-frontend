@@ -33,14 +33,11 @@ const Testimonial = () => {
     increaseIndex();
   }
 
-  setTimeout(() => {
-    const newIndex = checkNumber(index + 1);
-    setIndex(newIndex);
-  }, 5000);
+  // setTimeout(() => {
+  //   const newIndex = checkNumber(index + 1);
+  //   setIndex(newIndex);
+  // }, 5000);
 
-  console.log(reviews[index]?.time);
-
-  // const { userName, reviewText, time, userpic } = reviews[index];
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">

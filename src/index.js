@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { PhotoProvider } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -9,13 +8,11 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <UserContext>
-      <PhotoProvider>
-        <App />
-      </PhotoProvider>
-    </UserContext>
-  </React.StrictMode>
+  <UserContext>
+    <PhotoProvider>
+      <App />
+    </PhotoProvider>
+  </UserContext>
 );
 
 // If you want to start measuring performance in your app, pass a function

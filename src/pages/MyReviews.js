@@ -1,17 +1,28 @@
 import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import toast from 'react-hot-toast';
 import AllReviews from '../components/AllReviews';
 import { AuthContext } from '../Contexts/UserContext';
 
 export default function MyReviews() {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const { logout } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`http://localhost:5000/my-reviews?email=${user?.email}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data);
+        if (data.success) {
+          return setReviews(data.reviews);
+        } else {
+          toast.error('Unauthorized Access!');
+          logout();
+        }
       })
       .catch((err) => console.log(err));
   }, [user]);

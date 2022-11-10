@@ -52,8 +52,6 @@ export default function Destination() {
     e.target.reset();
   };
 
-  console.log(reviewCount);
-
   return (
     <>
       <Helmet>
