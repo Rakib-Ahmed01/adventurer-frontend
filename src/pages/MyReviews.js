@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
-import { HashLoader } from 'react-spinners';
+import { SyncLoader } from 'react-spinners';
 import AllReviews from '../components/AllReviews';
 import { AuthContext } from '../Contexts/UserContext';
 
@@ -33,7 +33,7 @@ export default function MyReviews() {
   if (isLoading) {
     return (
       <div className="w-full h-[100vh] flex justify-center items-center">
-        <HashLoader color="#4b7ccd" />
+        <SyncLoader color="#4b7ccd" />
       </div>
     );
   }

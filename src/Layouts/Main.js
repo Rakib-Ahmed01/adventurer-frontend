@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
-import { HashLoader } from 'react-spinners';
+import { SyncLoader } from 'react-spinners';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { AuthContext } from '../Contexts/UserContext';
@@ -10,7 +10,7 @@ const Main = () => {
   if (loading) {
     return (
       <div className="w-full h-screen flex justify-center items-center">
-        <HashLoader color="#4b7ccd" />
+        <SyncLoader color="#4b7ccd" />
       </div>
     );
   }

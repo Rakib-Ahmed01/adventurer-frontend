@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { HashLoader } from 'react-spinners';
+import { SyncLoader } from 'react-spinners';
 import Destination from '../components/Destination';
 
 export default function Destinations() {
@@ -20,7 +20,7 @@ export default function Destinations() {
   if (isLoading) {
     return (
       <div className="w-full h-[100vh] flex justify-center items-center">
-        <HashLoader color="#4b7ccd" />
+        <SyncLoader color="#4b7ccd" />
       </div>
     );
   }
@@ -41,7 +41,7 @@ export default function Destinations() {
               <span className="inline-block w-28 h-1 bg-blue-500 rounded-full"></span>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5 xl:mt-12 xl:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5 mt-6 xl:mt-8 xl:gap-8">
             {destinations.map((destination) => {
               return (
                 <Destination key={destination._id} destination={destination} />

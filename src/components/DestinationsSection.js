@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HashLoader } from 'react-spinners';
+import { SyncLoader } from 'react-spinners';
 import Destination from './Destination';
 
 export default function DestinationsSection() {
@@ -20,7 +20,7 @@ export default function DestinationsSection() {
   if (isLoading) {
     return (
       <div className="w-full h-[100vh] flex justify-center items-center">
-        <HashLoader color="#4b7ccd" />
+        <SyncLoader color="#4b7ccd" />
       </div>
     );
   }

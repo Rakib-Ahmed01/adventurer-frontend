@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { HashLoader } from 'react-spinners';
+import { SyncLoader } from 'react-spinners';
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
@@ -46,7 +46,7 @@ const Testimonial = () => {
   if (isLoading) {
     return (
       <div className="w-full h-[100vh] flex justify-center items-center">
-        <HashLoader color="#4b7ccd" />
+        <SyncLoader color="#4b7ccd" />
       </div>
     );
   }
