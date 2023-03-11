@@ -14,7 +14,7 @@ export default function Blog() {
             </h1>
 
             <div className="mx-auto">
-              <span className="inline-block w-28 h-1 bg-blue-500 rounded-full"></span>
+              <span className="inline-block w-28 h-1 bg-teal-500 rounded-full"></span>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function Blog() {
                 </li>
               </ul>
 
-              <p className="mt-3 text-sm text-blue-500">21 October 2022</p>
+              <p className="mt-3 text-sm text-teal-500">21 October 2022</p>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ export default function Blog() {
                 public key pair by the Identity Provider.
               </p>
 
-              <p className="mt-3 text-sm text-blue-500">02 September 2019</p>
+              <p className="mt-3 text-sm text-teal-500">02 September 2019</p>
             </div>
           </div>
           <div className="h-full rounded-md shadow">
@@ -119,7 +119,7 @@ export default function Blog() {
                 scalable, lightweight, fast, and data-intensive.
               </p>
 
-              <p className="mt-3 text-sm text-blue-500">28 August 2019</p>
+              <p className="mt-3 text-sm text-teal-500">28 August 2019</p>
             </div>
           </div>
           <div className="h-full rounded-md shadow">
@@ -141,7 +141,7 @@ export default function Blog() {
                 loop that receives requests and processes them.
               </p>
 
-              <p className="mt-3 text-sm text-blue-500">20 October 2019</p>
+              <p className="mt-3 text-sm text-teal-500">20 October 2019</p>
             </div>
           </div>
         </div>

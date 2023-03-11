@@ -21,7 +21,7 @@ const Header = () => {
                   alt="logo"
                 />
                 <Link
-                  className="website-name -ml-[1px] mt-1 text-2xl font-bold  transition-colors duration-300 transform dark:text-white lg:text-3xl border-blue-500 hover:text-gray-700 dark:hover:text-gray-300 text-blue-500"
+                  className="website-name -ml-[1px] mt-1 text-2xl font-bold  transition-colors duration-300 transform dark:text-white lg:text-3xl border-teal-500 hover:text-gray-700 dark:hover:text-gray-300 text-teal-500/80"
                   to="/"
                 >
                   Adventurer
@@ -79,19 +79,19 @@ const Header = () => {
             >
               <div className="flex flex-col md:flex-row md:items-center ">
                 <NavLink
-                  className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                  className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                   to="/home"
                 >
                   Home
                 </NavLink>
                 <NavLink
-                  className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                  className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                   to="/destinations"
                 >
                   Destinations
                 </NavLink>
                 <NavLink
-                  className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                  className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                   to="/blog"
                 >
                   Blog
@@ -100,13 +100,13 @@ const Header = () => {
                   <>
                     {' '}
                     <NavLink
-                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                       to="/login"
                     >
                       Login
                     </NavLink>
                     <NavLink
-                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                       to="/register"
                     >
                       Register
@@ -115,13 +115,13 @@ const Header = () => {
                 ) : (
                   <>
                     <NavLink
-                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                       to="/my-reviews"
                     >
                       My Reviews
                     </NavLink>
                     <NavLink
-                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-3 md:my-0"
+                      className="my-2 font-medium text-base text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-teal-500 dark:hover:text-teal-400 md:mx-3 md:my-0"
                       to="/add-destination"
                     >
                       Add Destination

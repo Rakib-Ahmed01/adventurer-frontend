@@ -6,17 +6,17 @@
 
 @layer components {
   .header .active {
-    @apply font-semibold text-blue-500 border-b-2   border-blue-500;
+    @apply font-semibold text-teal-500 border-b-2   border-teal-500;
   }
   .btn {
-    @apply tracking-wider px-6 py-2 font-medium text-sm text-white uppercase transition-colors duration-300 transform bg-blue-500 rounded-md lg:w-auto hover:bg-blue-600 focus:outline-none border border-blue-500 text-center;
+    @apply tracking-wider px-6 py-2 font-medium text-sm text-white uppercase transition-colors duration-300 transform bg-teal-500 rounded-md lg:w-auto hover:bg-teal-600 focus:outline-none border border-teal-500 text-center;
   }
   .outline-btn {
-    @apply tracking-wider px-6 py-2 font-medium  text-sm text-blue-500 uppercase transition-colors duration-300 transform bg-white rounded-md lg:w-auto  focus:outline-none border-2 hover:bg-blue-500 hover:text-white border-blue-500 text-center;
+    @apply tracking-wider px-6 py-2 font-medium  text-sm text-teal-500 uppercase transition-colors duration-300 transform bg-white rounded-md lg:w-auto  focus:outline-none border-2 hover:bg-teal-500 hover:text-white border-teal-500 text-center;
   }
 
   .delete-btn {
-    @apply btn w-full bg-red-500 border-red-500 hover:bg-red-500;
+    @apply btn w-full bg-red-600 border-red-500 hover:bg-red-500;
   }
 
   .update-btn {

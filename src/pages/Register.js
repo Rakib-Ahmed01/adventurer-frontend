@@ -86,7 +86,7 @@ export default function Register() {
         </h1>
 
         <div className="mx-auto">
-          <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
+          <span className="inline-block w-40 h-1 bg-teal-500 rounded-full"></span>
         </div>
       </div>
       <div className="w-[90%] md:w-[450px] mx-auto">
@@ -160,7 +160,7 @@ export default function Register() {
             </div>
             <small>
               Already have an acoount?{' '}
-              <Link to="/login" className="underline text-blue-500">
+              <Link to="/login" className="underline text-teal-500">
                 Login
               </Link>
             </small>

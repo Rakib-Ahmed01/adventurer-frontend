@@ -22,7 +22,7 @@ const Testimonial = () => {
   };
 
   const decreaseIndex = () => {
-    const newIndex = checkNumber(index + 1);
+    const newIndex = checkNumber(index - 1);
     setIndex(newIndex);
   };
 
@@ -34,19 +34,24 @@ const Testimonial = () => {
     }
   };
 
-  if (reviews[index]?.reviewText.length < 50) {
-    increaseIndex();
-  }
-
-  setTimeout(() => {
-    const newIndex = checkNumber(index + 1);
-    setIndex(newIndex);
-  }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     const newIndex = checkNumber(index + 1);
+  //     if (reviews[newIndex]) {
+  //       if (reviews[newIndex].reviewText.length < 50) {
+  //         increaseIndex();
+  //       } else {
+  //         setIndex(newIndex);
+  //       }
+  //     }
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, [index, reviews]);
 
   if (isLoading) {
     return (
       <div className="w-full h-[100vh] flex justify-center items-center">
-        <SyncLoader color="#4b7ccd" />
+        <SyncLoader color="#14b8a6" />
       </div>
     );
   }
@@ -60,12 +65,12 @@ const Testimonial = () => {
           </h1>
 
           <div className="flex justify-center mx-auto mt-4">
-            <span className="inline-block w-48 h-1 bg-blue-500 rounded-full"></span>
+            <span className="inline-block w-48 h-1 bg-teal-500 rounded-full"></span>
           </div>
 
-          <div className="flex items-start max-w-6xl mx-auto mt-16">
+          <div className="flex items-start w-full max-w-6xl mx-auto mt-16">
             <button
-              className="animate-pulse hidden p-2 text-blue-600 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block hover:bg-blue-200"
+              className="animate-pulse hidden p-2 text-teal-600 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block hover:bg-teal-200"
               onClick={increaseIndex}
             >
               <svg
@@ -112,7 +117,7 @@ const Testimonial = () => {
             </div>
 
             <button
-              className="animate-pulse hidden p-2 text-blue-600 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block hover:bg-blue-200"
+              className="animate-pulse hidden p-2 text-teal-600 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block hover:bg-teal-200"
               onClick={decreaseIndex}
             >
               <svg

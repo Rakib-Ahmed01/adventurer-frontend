@@ -87,7 +87,7 @@ export default function Login() {
         </h1>
 
         <div className="mx-auto">
-          <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
+          <span className="inline-block w-40 h-1 bg-teal-500 rounded-full"></span>
         </div>
       </div>
       <div className="mx-auto w-[90%] md:w-[450px]">
@@ -134,12 +134,12 @@ export default function Login() {
                 )}
               </div>
             </div>
-            <small className="block underline text-blue-500">
+            <small className="block underline text-teal-500">
               Forgot Password?
             </small>
             <small className="block">
               Don't have an acoount?{' '}
-              <Link to="/register" className="underline text-blue-500">
+              <Link to="/register" className="underline text-teal-500">
                 Register
               </Link>
             </small>

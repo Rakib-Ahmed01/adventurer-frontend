@@ -10,7 +10,7 @@ const Main = () => {
   if (loading) {
     return (
       <div className="w-full h-screen flex justify-center items-center">
-        <SyncLoader color="#4b7ccd" />
+        <SyncLoader color="#14b8a6" />
       </div>
     );
   }

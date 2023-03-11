@@ -45,7 +45,7 @@ export default function UpdateReview() {
           </h1>
 
           <div className="mx-auto">
-            <span className="inline-block w-36 h-1 bg-blue-500 rounded-full"></span>
+            <span className="inline-block w-36 h-1 bg-teal-500 rounded-full"></span>
           </div>
         </div>
       </div>

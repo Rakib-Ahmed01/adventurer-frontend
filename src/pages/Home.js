@@ -1,6 +1,5 @@
 import Banner from '../components/Banner';
 import DestinationsSection from '../components/DestinationsSection';
-import RegisterNow from '../components/RegisterNow';
 import Testimonial from '../components/Testimonial';
 
 export default function Home() {
@@ -9,7 +8,7 @@ export default function Home() {
       <Banner />
       <DestinationsSection />
       <Testimonial />
-      <RegisterNow />
+      {/* <RegisterNow /> */}
     </>
   );
 }

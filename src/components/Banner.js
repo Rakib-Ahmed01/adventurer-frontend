@@ -12,7 +12,7 @@ const Banner = () => {
               <h1 className="text-3xl font-semibold text-gray-800 uppercase dark:text-white lg:text-5xl">
                 Never Stop
                 <br />
-                <span className="block -ml-[2px] mt-1 font-bold text-blue-500 text-6xl">
+                <span className="block -ml-[2px] mt-1 font-bold text-teal-500 text-6xl">
                   Exploring
                 </span>
               </h1>

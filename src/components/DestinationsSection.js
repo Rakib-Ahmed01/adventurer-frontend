@@ -20,7 +20,7 @@ export default function DestinationsSection() {
   if (isLoading) {
     return (
       <div className="w-full h-[100vh] flex justify-center items-center">
-        <SyncLoader color="#4b7ccd" />
+        <SyncLoader color="#14b8a6" />
       </div>
     );
   }
@@ -35,7 +35,7 @@ export default function DestinationsSection() {
             </h1>
 
             <div className="mx-auto">
-              <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
+              <span className="inline-block w-40 h-1 bg-teal-500 rounded-full"></span>
             </div>
           </div>
 

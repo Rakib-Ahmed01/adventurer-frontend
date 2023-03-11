@@ -63,28 +63,28 @@ export default function Destination() {
             <PhotoView src={image}>
               <img src={image} alt={title} className="w-full destination-img" />
             </PhotoView>
-            <p className="absolute flex justify-center items-center top-2 left-2 bg-white px-4 py-1 rounded text-blue-500">
+            <p className="absolute flex justify-center items-center top-2 left-2 bg-white px-4 py-1 rounded text-teal-500">
               {days}
             </p>
 
-            <p className="absolute flex justify-center items-center top-1 right-2 bg-blue-500 px-4 py-1 rounded text-white mt-1">
+            <p className="absolute flex justify-center items-center top-1 right-2 bg-teal-500 px-4 py-1 rounded text-white mt-1">
               {price}Tk
             </p>
           </div>
           <div className="p-2 relative">
-            <h3 className="text-blue-500 font-medium text-xl">{title}</h3>
+            <h3 className="text-teal-500 font-medium text-xl">{title}</h3>
             <h2 className="mt-1 mb-2">{desc}</h2>
             <h4 className="flex items-center gap-[2px]">
               <span>
-                <AiFillStar className="text-blue-500" />
+                <AiFillStar className="text-teal-500" />
               </span>
               {`${rating}(${reviewCount})`}
             </h4>
           </div>
         </div>
         <div className="w-full">
-          <h2 className="text-center text-xl border-blue-500">Reviews</h2>
-          <div className="w-24 h-[3px] rounded-full bg-blue-500 mx-auto"></div>
+          <h2 className="text-center text-xl border-teal-500">Reviews</h2>
+          <div className="w-24 h-[3px] rounded-full bg-teal-500 mx-auto"></div>
           <div className="border p-2 mt-4 rounded space-y-4">
             <form onSubmit={handleSubmit}>
               <textarea
